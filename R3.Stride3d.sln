@@ -1,0 +1,35 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 16
+VisualStudioVersion = 16.0.0.0
+MinimumVisualStudioVersion = 16.0.0.0
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "R3.Stride3d.Sandbox.Windows", "sandbox\R3.Stride3d.Sandbox.Windows\R3.Stride3d.Sandbox.Windows.csproj", "{63F4B3A9-B631-4870-A0AD-D88D03B9C7DB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "R3.Stride3d", "R3.Stride3d\R3.Stride3d.csproj", "{EB6673DC-E39B-4D21-A436-B91211976500}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "R3.Stride3d.Sandbox", "sandbox\R3.Stride3d.Sandbox\R3.Stride3d.Sandbox.csproj", "{E922FA94-7A1D-45BE-9613-2AFA15227806}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EB6673DC-E39B-4D21-A436-B91211976500}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB6673DC-E39B-4D21-A436-B91211976500}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB6673DC-E39B-4D21-A436-B91211976500}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{EB6673DC-E39B-4D21-A436-B91211976500}.Debug|x64.Build.0 = Debug|Any CPU
+		{EB6673DC-E39B-4D21-A436-B91211976500}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{EB6673DC-E39B-4D21-A436-B91211976500}.Debug|x86.Build.0 = Debug|Any CPU
+		{EB6673DC-E39B-4D21-A436-B91211976500}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB6673DC-E39B-4D21-A436-B91211976500}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB6673DC-E39B-4D21-A436-B91211976500}.Release|x64.ActiveCfg = Release|Any CPU
+		{EB6673DC-E39B-4D21-A436-B91211976500}.Release|x64.Build.0 = Release|Any CPU
+		{EB6673DC-E39B-4D21-A436-B91211976500}.Release|x86.ActiveCfg = Release|Any CPU
+		{EB6673DC-E39B-4D21-A436-B91211976500}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
