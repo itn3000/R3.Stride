@@ -9,20 +9,30 @@ using Stride.Engine;
 
 namespace R3.Stride3d.Sandbox
 {
-    public class ObservableTestScript : StartupScript
+    public class ObservableTestScript : SyncScript
     {
         // Declared public member fields and properties will show in the game studio
-
+        Stride3dFrameProvider frameProvider;
         public override void Start()
         {
-            Stride3dProvider.SetDefaultObservableSystem(Game);
-            Observable.EveryUpdate(Stride3dProvider.DefaultFrameProvider)
+            frameProvider = new Stride3dFrameProvider(Game);
+            Observable.Interval(TimeSpan.FromSeconds(1))
+                .Subscribe(_ =>
+                {
+                    Log.Info($"interval: {Game.UpdateTime.Total}");
+                });
+            Observable.EveryUpdate()
                 .ThrottleLastFrame(60)
                 .Subscribe(x =>
                 {
-                    Log.Info($"everyupdate - sampleframe(10): {Stride3dProvider.DefaultFrameProvider.GetFrameCount()}, {Game.UpdateTime.Elapsed}");
+                    Log.Info($"everyupdate - sampleframe(10): {frameProvider.GetFrameCount()}, {Game.UpdateTime.Elapsed}");
                 });
             // Initialization of the script.
+        }
+
+        public override void Update()
+        {
+            frameProvider.Run(Game.UpdateTime.Elapsed.TotalSeconds);
         }
     }
 }

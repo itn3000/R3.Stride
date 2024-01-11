@@ -11,17 +11,17 @@ namespace R3.Stride3d
 {
     public static class Stride3dProvider
     {
-        static readonly Logger _logger = GlobalLogger.GetLogger(nameof(Stride3dProvider));
+        static readonly Logger _logger = GlobalLogger.GetLogger("R3.Stride3d");
         static void DefaultUnobservableException(Exception exception)
         {
-            _logger.Error(exception.ToString());
+            _logger.Error("UnobservableException", exception);
         }
         public static Stride3dFrameProvider? DefaultFrameProvider;
         public static Stride3dTimeProvider? DefaultTimeProvider;
         static IGame? gameObject;
-        public static void SetDefaultObservableSystem(IGame game, Action<Exception>? unobservableAction = null)
+        public static void SetDefaultObservableSystem(IGame game, Action<Exception>? unobservableExceptionHandler = null)
         {
-            if(game != null && (gameObject == null || game != gameObject))
+            if(game != null && (gameObject == null || object.ReferenceEquals(game, gameObject)))
             {
                 while (true)
                 {
@@ -32,16 +32,17 @@ namespace R3.Stride3d
                         break;
                     }
                 }
-                if (unobservableAction != null)
+                if (unobservableExceptionHandler != null)
                 {
-                    ObservableSystem.RegisterUnhandledExceptionHandler(unobservableAction);
+                    ObservableSystem.RegisterUnhandledExceptionHandler(unobservableExceptionHandler);
                 }
                 else
                 {
                     ObservableSystem.RegisterUnhandledExceptionHandler(DefaultUnobservableException);
                 }
                 DefaultFrameProvider = new Stride3dFrameProvider(game);
-                DefaultTimeProvider = new Stride3dTimeProvider(game);
+                DefaultTimeProvider = new Stride3dTimeProvider(DefaultFrameProvider);
+                DefaultFrameProvider.Delta = new System.Runtime.CompilerServices.StrongBox<double>();
                 ObservableSystem.DefaultFrameProvider = DefaultFrameProvider;
                 ObservableSystem.DefaultTimeProvider = DefaultTimeProvider;
             }

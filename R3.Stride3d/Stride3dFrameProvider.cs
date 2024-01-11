@@ -35,9 +35,11 @@ public class Stride3dFrameProvider : FrameProvider
     public override void Register(IFrameRunnerWorkItem callback)
     {
         list.Add(callback, out _);
+        var span = list.AsSpan();
+        System.Diagnostics.Debug.WriteLine($"{span.Length}");
     }
 
-    internal void Run(double _)
+    public void Run(double _)
     {
         long frameCount = GetFrameCount();
 

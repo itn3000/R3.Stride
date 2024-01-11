@@ -12,7 +12,23 @@ Hierarchy:
         - ref!! 8d7e4875-b31b-4711-991a-7a5b95237e9c
         - ref!! 6ac3719b-8beb-473e-8199-fe8bfa1ff406
         - ref!! 84ce7992-4da1-44ea-bada-65340b2752a2
+        - ref!! 1733107a-4788-40b4-bf02-b9358626e1fb
     Parts:
+        -   Entity:
+                Id: 1733107a-4788-40b4-bf02-b9358626e1fb
+                Name: GlobalObservableTest
+                Components:
+                    a5e54d9d9428480d9501eb159a666cf0: !TransformComponent
+                        Id: 32af2a87-0108-4c70-9161-0049128d5324
+                        Position: {X: 0.0, Y: 0.0, Z: 0.0}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    2a2bfc707412594bc8d005465d0d1bb9: !R3.Stride3d.Stride3dFrameProviderComponent,R3.Stride3d
+                        Id: bf967f1e-68ca-4d38-a8d6-395dd492a349
+                        Priority: -1
+                    3abe734888a165e1cfcdcf88a5308104: !R3.Stride3d.Sandbox.GlobalObservableTestScript,R3.Stride3d.Sandbox
+                        Id: 443cb45d-e4c1-4bd5-bf14-e79b39995636
         -   Entity:
                 Id: 29be98b7-ef69-4a92-8476-6a13d595e0ef
                 Name: Skybox
@@ -105,6 +121,7 @@ Hierarchy:
                         Children: {}
                     de5c10f362ad444eeb723e5ea0c3d5ca: !R3.Stride3d.Sandbox.ObservableTestScript,R3.Stride3d.Sandbox
                         Id: b142e103-5458-4788-b96a-af1e031c5b52
+                        Priority: 1
         -   Entity:
                 Id: 8d7e4875-b31b-4711-991a-7a5b95237e9c
                 Name: Ground

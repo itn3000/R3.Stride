@@ -6,12 +6,15 @@ using System.Threading.Tasks;
 using Stride.Core;
 using Stride.Engine;
 using Stride.Games;
+using System.Runtime.CompilerServices;
 
 namespace R3.Stride3d
 {
+    [ComponentCategory("R3")]
     public class Stride3dFrameProviderComponent : SyncScript
     {
         Stride3dFrameProvider? frameProvider;
+        StrongBox<double> Delta = new StrongBox<double>();
 
         public override void Start()
         {
@@ -19,7 +22,11 @@ namespace R3.Stride3d
         }
         public override void Update()
         {
-            Stride3dProvider.DefaultFrameProvider?.Run(Game.UpdateTime.Elapsed.TotalSeconds);
+            if(Stride3dProvider.DefaultFrameProvider != null)
+            {
+                Stride3dProvider.DefaultFrameProvider.Delta.Value = Game.UpdateTime.Elapsed.TotalSeconds;
+                Stride3dProvider.DefaultFrameProvider.Run(Game.UpdateTime.Elapsed.TotalSeconds);
+            }
         }
     }
 }

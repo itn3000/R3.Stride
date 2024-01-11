@@ -9,9 +9,9 @@ public sealed class Stride3dTimeProvider: TimeProvider
 {
     readonly Stride3dFrameProvider frameProvider;
 
-    public Stride3dTimeProvider(IGame game)
+    public Stride3dTimeProvider(Stride3dFrameProvider frameProvider)
     {
-        this.frameProvider = new Stride3dFrameProvider(game);
+        this.frameProvider = frameProvider;
     }
 
     public override ITimer CreateTimer(TimerCallback callback, object? state, TimeSpan dueTime, TimeSpan period)
@@ -49,6 +49,7 @@ internal sealed class Stride3dFrameTimer : ITimer, IFrameRunnerWorkItem
         isDisposed = false;
         this.frameProvider = frameProvider;
         elapsed = 0;
+        Change(dueTime, period);
     }
 
     public bool Change(TimeSpan dueTime, TimeSpan period)
