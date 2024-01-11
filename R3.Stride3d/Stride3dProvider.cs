@@ -11,7 +11,7 @@ namespace R3.Stride3d
 {
     public static class Stride3dProvider
     {
-        static readonly Logger _logger = GlobalLogger.GetLogger("R3.Stride3d");
+        static readonly Logger _logger = GlobalLogger.GetLogger("R3.Stride");
         static void DefaultUnobservableException(Exception exception)
         {
             _logger.Error("UnobservableException", exception);
