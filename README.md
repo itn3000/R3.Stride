@@ -7,12 +7,11 @@ R3 integration with Stride(WIP)
 
 # Usage
 
-1. Reference R3.Stride3d
+1. Reference R3.Stride
 2. add empty Entity by Stride editor
-3. add "R3/Stride3dFrameProviderComponent"
-4. set Stride3d Frame Provider Component's priority to lower than other scripts which use R3 API
+3. add "R3/StrideFrameProviderComponent"
+4. set Stride Frame Provider Component's priority to lower than other scripts which use R3 API
 
 # TODO
 
-* Naming(Is "Stride3d" OK?)
 * API visibility(Currently, almost public)

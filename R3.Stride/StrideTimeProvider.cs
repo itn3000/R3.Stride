@@ -5,21 +5,21 @@ using System.Threading.Tasks;
 
 namespace R3;
 
-public sealed class Stride3dTimeProvider: TimeProvider
+public sealed class StrideTimeProvider: TimeProvider
 {
-    readonly Stride3dFrameProvider frameProvider;
+    readonly StrideFrameProvider frameProvider;
 
-    public Stride3dTimeProvider(Stride3dFrameProvider frameProvider)
+    public StrideTimeProvider(StrideFrameProvider frameProvider)
     {
         this.frameProvider = frameProvider;
     }
 
     public override ITimer CreateTimer(TimerCallback callback, object? state, TimeSpan dueTime, TimeSpan period)
     {
-        return new Stride3dFrameTimer(callback, state, dueTime, period, frameProvider);
+        return new StrideFrameTimer(callback, state, dueTime, period, frameProvider);
     }
 }
-internal sealed class Stride3dFrameTimer : ITimer, IFrameRunnerWorkItem
+internal sealed class StrideFrameTimer : ITimer, IFrameRunnerWorkItem
 {
     enum RunningState
     {
@@ -33,13 +33,13 @@ internal sealed class Stride3dFrameTimer : ITimer, IFrameRunnerWorkItem
     TimeSpan dueTime;
     TimeSpan period;
     bool isDisposed;
-    readonly Stride3dFrameProvider frameProvider;
+    readonly StrideFrameProvider frameProvider;
     readonly object gate = new object();
     RunningState runningState;
     double elapsed;
 
 
-    public Stride3dFrameTimer(TimerCallback callback, object? state, TimeSpan dueTime, TimeSpan period, Stride3dFrameProvider frameProvider)
+    public StrideFrameTimer(TimerCallback callback, object? state, TimeSpan dueTime, TimeSpan period, StrideFrameProvider frameProvider)
     {
         this.callback = callback;
         this.state = state;

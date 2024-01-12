@@ -8,24 +8,24 @@ using Stride.Engine;
 using Stride.Games;
 using System.Runtime.CompilerServices;
 
-namespace R3.Stride3d
+namespace R3.Stride
 {
     [ComponentCategory("R3")]
-    public class Stride3dFrameProviderComponent : SyncScript
+    public class StrideFrameProviderComponent : SyncScript
     {
-        Stride3dFrameProvider? frameProvider;
+        StrideFrameProvider? frameProvider;
         StrongBox<double> Delta = new StrongBox<double>();
 
         public override void Start()
         {
-            Stride3dProvider.SetDefaultObservableSystem(Game);
+            StrideProvider.SetDefaultObservableSystem(Game);
         }
         public override void Update()
         {
-            if(Stride3dProvider.DefaultFrameProvider != null)
+            if(StrideProvider.DefaultFrameProvider != null)
             {
-                Stride3dProvider.DefaultFrameProvider.Delta.Value = Game.UpdateTime.Elapsed.TotalSeconds;
-                Stride3dProvider.DefaultFrameProvider.Run(Game.UpdateTime.Elapsed.TotalSeconds);
+                StrideProvider.DefaultFrameProvider.Delta.Value = Game.UpdateTime.Elapsed.TotalSeconds;
+                StrideProvider.DefaultFrameProvider.Run(Game.UpdateTime.Elapsed.TotalSeconds);
             }
         }
     }

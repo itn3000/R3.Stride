@@ -7,17 +7,17 @@ using Stride.Games;
 using Stride.Core.Diagnostics;
 using System.Threading;
 
-namespace R3.Stride3d
+namespace R3.Stride
 {
-    public static class Stride3dProvider
+    public static class StrideProvider
     {
         static readonly Logger _logger = GlobalLogger.GetLogger("R3.Stride");
         static void DefaultUnobservableException(Exception exception)
         {
             _logger.Error("UnobservableException", exception);
         }
-        public static Stride3dFrameProvider? DefaultFrameProvider;
-        public static Stride3dTimeProvider? DefaultTimeProvider;
+        public static StrideFrameProvider? DefaultFrameProvider;
+        public static StrideTimeProvider? DefaultTimeProvider;
         static IGame? gameObject;
         public static void SetDefaultObservableSystem(IGame game, Action<Exception>? unobservableExceptionHandler = null)
         {
@@ -40,8 +40,8 @@ namespace R3.Stride3d
                 {
                     ObservableSystem.RegisterUnhandledExceptionHandler(DefaultUnobservableException);
                 }
-                DefaultFrameProvider = new Stride3dFrameProvider(game);
-                DefaultTimeProvider = new Stride3dTimeProvider(DefaultFrameProvider);
+                DefaultFrameProvider = new StrideFrameProvider(game);
+                DefaultTimeProvider = new StrideTimeProvider(DefaultFrameProvider);
                 DefaultFrameProvider.Delta = new System.Runtime.CompilerServices.StrongBox<double>();
                 ObservableSystem.DefaultFrameProvider = DefaultFrameProvider;
                 ObservableSystem.DefaultTimeProvider = DefaultTimeProvider;

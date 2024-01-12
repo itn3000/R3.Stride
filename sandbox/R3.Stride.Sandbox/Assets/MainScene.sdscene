@@ -24,10 +24,10 @@ Hierarchy:
                         Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
                         Scale: {X: 1.0, Y: 1.0, Z: 1.0}
                         Children: {}
-                    2a2bfc707412594bc8d005465d0d1bb9: !R3.Stride3d.Stride3dFrameProviderComponent,R3.Stride3d
+                    2a2bfc707412594bc8d005465d0d1bb9: !R3.Stride.StrideFrameProviderComponent,R3.Stride
                         Id: bf967f1e-68ca-4d38-a8d6-395dd492a349
                         Priority: -1
-                    3abe734888a165e1cfcdcf88a5308104: !R3.Stride3d.Sandbox.GlobalObservableTestScript,R3.Stride3d.Sandbox
+                    3abe734888a165e1cfcdcf88a5308104: !R3.Stride.Sandbox.GlobalObservableTestScript,R3.Stride.Sandbox
                         Id: 443cb45d-e4c1-4bd5-bf14-e79b39995636
         -   Entity:
                 Id: 29be98b7-ef69-4a92-8476-6a13d595e0ef
@@ -61,7 +61,7 @@ Hierarchy:
                         Name: null
                         Projection: Perspective
                         Slot: 64a31a2b-30c6-4763-a3e4-48ae42f61835
-                    a2ec74d8b84c03ffa7bfaea9f5818011: !R3.Stride3d.Sandbox.BasicCameraController,R3.Stride3d.Sandbox
+                    a2ec74d8b84c03ffa7bfaea9f5818011: !R3.Stride.Sandbox.BasicCameraController,R3.Stride.Sandbox
                         Id: 40b14ddd-22ec-449a-8587-d1ddc06755f7
                         Gamepad: false
                         KeyboardMovementSpeed: {X: 5.0, Y: 5.0, Z: 5.0}
@@ -119,7 +119,7 @@ Hierarchy:
                         Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
                         Scale: {X: 1.0, Y: 1.0, Z: 1.0}
                         Children: {}
-                    de5c10f362ad444eeb723e5ea0c3d5ca: !R3.Stride3d.Sandbox.ObservableTestScript,R3.Stride3d.Sandbox
+                    de5c10f362ad444eeb723e5ea0c3d5ca: !R3.Stride.Sandbox.ObservableTestScript,R3.Stride.Sandbox
                         Id: b142e103-5458-4788-b96a-af1e031c5b52
                         Priority: 1
         -   Entity:

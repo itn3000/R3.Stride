@@ -7,15 +7,15 @@ using Stride.Core.Mathematics;
 using Stride.Input;
 using Stride.Engine;
 
-namespace R3.Stride3d.Sandbox
+namespace R3.Stride.Sandbox
 {
     public class ObservableTestScript : SyncScript
     {
         // Declared public member fields and properties will show in the game studio
-        Stride3dFrameProvider frameProvider;
+        StrideFrameProvider frameProvider;
         public override void Start()
         {
-            frameProvider = new Stride3dFrameProvider(Game);
+            frameProvider = new StrideFrameProvider(Game);
             Observable.Interval(TimeSpan.FromSeconds(1))
                 .Subscribe(_ =>
                 {

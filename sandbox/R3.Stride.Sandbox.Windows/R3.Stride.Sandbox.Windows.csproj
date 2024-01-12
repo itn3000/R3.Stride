@@ -5,7 +5,7 @@
     <RuntimeIdentifier>win-x64</RuntimeIdentifier>
     <ApplicationIcon>Resources\Icon.ico</ApplicationIcon>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>R3.Stride3d.Sandbox</RootNamespace>
+    <RootNamespace>R3.Stride.Sandbox</RootNamespace>
 
     <OutputPath>..\Bin\Windows\$(Configuration)\</OutputPath>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
@@ -15,7 +15,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\R3.Stride3d.Sandbox\R3.Stride3d.Sandbox.csproj" />
+    <ProjectReference Include="..\R3.Stride.Sandbox\R3.Stride.Sandbox.csproj" />
   </ItemGroup>
 
 </Project>

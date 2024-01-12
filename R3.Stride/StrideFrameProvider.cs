@@ -5,14 +5,14 @@ using Stride.Games;
 
 namespace R3;
 
-public class Stride3dFrameProvider : FrameProvider
+public class StrideFrameProvider : FrameProvider
 {
     FreeListCore<IFrameRunnerWorkItem> list;
     readonly object gate = new object();
 
     internal StrongBox<double> Delta = default!; // set from Node before running process.
 
-    public Stride3dFrameProvider(IGame game)
+    public StrideFrameProvider(IGame game)
     {
         this.list = new FreeListCore<IFrameRunnerWorkItem>(gate);
         _Game = game;

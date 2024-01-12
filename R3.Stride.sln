@@ -2,11 +2,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34408.163
 MinimumVisualStudioVersion = 16.0.0.0
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "R3.Stride3d.Sandbox.Windows", "sandbox\R3.Stride3d.Sandbox.Windows\R3.Stride3d.Sandbox.Windows.csproj", "{63F4B3A9-B631-4870-A0AD-D88D03B9C7DB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "R3.Stride.Sandbox.Windows", "sandbox\R3.Stride.Sandbox.Windows\R3.Stride.Sandbox.Windows.csproj", "{63F4B3A9-B631-4870-A0AD-D88D03B9C7DB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "R3.Stride3d", "R3.Stride3d\R3.Stride3d.csproj", "{EB6673DC-E39B-4D21-A436-B91211976500}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "R3.Stride", "R3.Stride\R3.Stride.csproj", "{EB6673DC-E39B-4D21-A436-B91211976500}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "R3.Stride3d.Sandbox", "sandbox\R3.Stride3d.Sandbox\R3.Stride3d.Sandbox.csproj", "{E922FA94-7A1D-45BE-9613-2AFA15227806}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "R3.Stride.Sandbox", "sandbox\R3.Stride.Sandbox\R3.Stride.Sandbox.csproj", "{E922FA94-7A1D-45BE-9613-2AFA15227806}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

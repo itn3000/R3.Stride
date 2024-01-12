@@ -7,7 +7,7 @@ using Stride.Core.Mathematics;
 using Stride.Input;
 using Stride.Engine;
 
-namespace R3.Stride3d.Sandbox
+namespace R3.Stride.Sandbox
 {
     public class GlobalObservableTestScript : SyncScript
     {

@@ -17,6 +17,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\R3.Stride3d\R3.Stride3d.csproj" />
+    <ProjectReference Include="..\..\R3.Stride\R3.Stride.csproj" />
   </ItemGroup>
 </Project>

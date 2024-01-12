@@ -1,14 +1,13 @@
 !Package
 SerializedVersion: {Assets: 3.1.0.0}
 Meta:
-    Name: R3.Stride3d.Sandbox
+    Name: R3.Stride
     Version: 1.0.0
     Authors: []
     Owners: []
     Dependencies: null
 AssetFolders:
     -   Path: !dir Assets
-    -   Path: !dir Effects
 ResourceFolders:
     - !dir Resources
 OutputGroupDirectories: {}
