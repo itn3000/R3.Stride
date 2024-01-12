@@ -27,6 +27,12 @@ namespace R3.Stride.Sandbox
                 {
                     Log.Info($"everyupdate - sampleframe(10): {frameProvider.GetFrameCount()}, {Game.UpdateTime.Elapsed}");
                 });
+            Observable.EveryUpdate(frameProvider)
+                .ThrottleLastFrame(180, frameProvider)
+                .Subscribe(x =>
+                {
+                    Log.Info($"everyupdate - sampleframe(180), local frame provider: {frameProvider.GetFrameCount()}, {Game.UpdateTime.Elapsed}");
+                });
             // Initialization of the script.
         }
 

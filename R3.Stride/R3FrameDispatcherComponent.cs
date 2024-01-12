@@ -14,19 +14,16 @@ namespace R3.Stride
     [Display("R3 Frame Dispatcher")]
     public class R3FrameDispatcherComponent : SyncScript
     {
-        StrideFrameProvider? frameProvider;
-        StrongBox<double> Delta = new StrongBox<double>();
-
         public override void Start()
         {
-            StrideProvider.SetDefaultObservableSystem(Game);
+            StrideInitializer.SetDefaultObservableSystem(Game);
         }
         public override void Update()
         {
-            if(StrideProvider.DefaultFrameProvider != null)
+            if(StrideInitializer.DefaultFrameProvider != null)
             {
-                StrideProvider.DefaultFrameProvider.Delta.Value = Game.UpdateTime.Elapsed.TotalSeconds;
-                StrideProvider.DefaultFrameProvider.Run(Game.UpdateTime.Elapsed.TotalSeconds);
+                StrideInitializer.DefaultFrameProvider.Delta.Value = Game.UpdateTime.Elapsed.TotalSeconds;
+                StrideInitializer.DefaultFrameProvider.Run(Game.UpdateTime.Elapsed.TotalSeconds);
             }
         }
     }

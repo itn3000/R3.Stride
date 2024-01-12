@@ -9,7 +9,7 @@ using System.Threading;
 
 namespace R3.Stride
 {
-    public static class StrideProvider
+    public static class StrideInitializer
     {
         static readonly Logger _logger = GlobalLogger.GetLogger("R3.Stride");
         static void DefaultUnobservableException(Exception exception)
@@ -21,7 +21,7 @@ namespace R3.Stride
         static IGame? gameObject;
         public static void SetDefaultObservableSystem(IGame game, Action<Exception>? unobservableExceptionHandler = null)
         {
-            if(game != null && (gameObject == null || object.ReferenceEquals(game, gameObject)))
+            if(game != null && (gameObject == null || !object.ReferenceEquals(game, gameObject)))
             {
                 while (true)
                 {
