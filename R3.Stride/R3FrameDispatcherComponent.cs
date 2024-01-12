@@ -11,7 +11,8 @@ using System.Runtime.CompilerServices;
 namespace R3.Stride
 {
     [ComponentCategory("R3")]
-    public class StrideFrameProviderComponent : SyncScript
+    [Display("R3 Frame Dispatcher")]
+    public class R3FrameDispatcherComponent : SyncScript
     {
         StrideFrameProvider? frameProvider;
         StrongBox<double> Delta = new StrongBox<double>();
