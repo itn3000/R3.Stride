@@ -9,7 +9,7 @@ public sealed class StrideTimeProvider: TimeProvider
 {
     readonly StrideFrameProvider frameProvider;
 
-    public StrideTimeProvider(StrideFrameProvider frameProvider)
+    internal StrideTimeProvider(StrideFrameProvider frameProvider)
     {
         this.frameProvider = frameProvider;
     }

@@ -12,7 +12,7 @@ namespace R3.Stride
     public static class StrideInitializer
     {
         static readonly Logger _logger = GlobalLogger.GetLogger("R3.Stride");
-        static void DefaultUnobservableException(Exception exception)
+        static void DefaultUnobservableExceptionHandler(Exception exception)
         {
             _logger.Error("UnobservableException", exception);
         }
@@ -38,7 +38,7 @@ namespace R3.Stride
                 }
                 else
                 {
-                    ObservableSystem.RegisterUnhandledExceptionHandler(DefaultUnobservableException);
+                    ObservableSystem.RegisterUnhandledExceptionHandler(DefaultUnobservableExceptionHandler);
                 }
                 DefaultFrameProvider = new StrideFrameProvider(game);
                 DefaultTimeProvider = new StrideTimeProvider(DefaultFrameProvider);

@@ -5,14 +5,14 @@ using Stride.Games;
 
 namespace R3;
 
-public class StrideFrameProvider : FrameProvider
+public sealed class StrideFrameProvider : FrameProvider
 {
     FreeListCore<IFrameRunnerWorkItem> list;
     readonly object gate = new object();
 
     internal StrongBox<double> Delta = default!; // set from Node before running process.
 
-    public StrideFrameProvider(IGame game)
+    internal StrideFrameProvider(IGame game)
     {
         this.list = new FreeListCore<IFrameRunnerWorkItem>(gate);
         _Game = game;
@@ -37,7 +37,7 @@ public class StrideFrameProvider : FrameProvider
         list.Add(callback, out _);
     }
 
-    public void Run(double _)
+    internal void Run(double _)
     {
         long frameCount = GetFrameCount();
 
