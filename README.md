@@ -1,3 +1,5 @@
+Merged into R3 project, so this project is archived.
+
 # R3.Stride
 
 R3 integration with Stride(WIP)
